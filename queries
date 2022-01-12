@@ -1,0 +1,42 @@
+--query 1
+SELECT a.artist_name, COUNT(artist_num) AS count
+	FROM artist_info a
+	JOIN song_info s
+	ON s.track_number = a.artist_num
+	WHERE s.rank < 10
+	GROUP BY a.artist_name
+	ORDER BY count DESC
+  
+--query 2
+SELECT a.artist_name, COUNT(artist_num) AS count
+	FROM artist_info a
+	JOIN song_info s
+	ON s.track_number = a.artist_num
+	GROUP BY a.artist_name
+	ORDER BY count DESC
+
+--query 3
+SELECT a.album_name, COUNT (a.artist_name) AS hits
+	FROM artist_info a
+	WHERE a.artist_name = 'Ariana Grande'
+	GROUP BY a.album_name
+	ORDER BY hits DESC
+
+--query 4
+SELECT a.follower_num, a.artist_name
+	FROM artist_info a
+	GROUP BY a.artist_name, a.follower_num
+	ORDER BY a.follower_num DESC
+
+--query 5
+SELECT a.follower_num, a.artist_name, MIN(s.rank) AS highest_rank
+	FROM artist_info a
+	JOIN song_info s
+	ON s.track_number = a.artist_num
+	GROUP BY a.artist_name, a.follower_num
+	ORDER BY highest_rank, a.follower_num DESC
+
+--query 6
+SELECT COUNT(s.rank) AS ranks
+	FROM song_info s
+	WHERE s.explicit = 'FALSE' AND s.rank = 1
