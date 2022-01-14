@@ -1,13 +1,13 @@
 # spotify-charts
 <b> Introduction: </b>
 <br>
-I found a dataset on Kaggle that documented the global top 200 songs from Spotify every week and downloaded the .csv file of the data. I organized the data into separate tables, renaming information, and made it easier for me to understand. 
-//add pic of database structure
-![image](https://user-images.githubusercontent.com/96144192/149042027-1aefd390-0643-4956-a4e6-1ff493b10588.png)
+I found a <a href="https://www.kaggle.com/bartomiejczyewski/spotify-top-200-weekly-global-20172021">dataset</a> on Kaggle that documented the global top 200 songs from Spotify every week and downloaded the .csv file of the data. I organized the data into separate tables, renaming information, and made it easier for me to understand. 
+
+<img src="https://user-images.githubusercontent.com/96144192/149042027-1aefd390-0643-4956-a4e6-1ff493b10588.png" width="650" height="350"/>
 
 
 I put information about artists in one table, such as their number of followers, and created the other table based on song details, such as length, minutes streamed, and explicit content.
-I created columns in both table that kept track of the serial num (a.artist_num and (s.track_number) making one of them a primary key, allowing me to create a relationship between both tables. 
+I created columns in both tables that kept track of the serial number (a.artist_num and (s.track_number) making one of them a primary key, allowing me to create a relationship between both tables. 
 
 <i> Query 1</i>
 The query showed that Post Malone had the highest number of occurences in the top 30 of the global charts at 127 occurences. However, as query 2 showed, this wasn't consistent with occurences in the global top 200. Ed Sheeran had the most occurences, with 1320, meaning that while Ed Sheeran ends up in the top 200 fairly often, he doesn't land in the top 10 quite as often as other artists.  
